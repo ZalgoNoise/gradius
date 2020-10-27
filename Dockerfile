@@ -1,15 +1,15 @@
-FROM ubuntu:20.04
+FROM alpine:latest
 
-RUN apt-get update -y       \
-    && apt-get upgrade -y   \
-    && apt-get install -y   \
+RUN apk add                 \
+    --no-cache              \
+    --update                \
     freeradius              \
     freeradius-ldap         \
-    ldap-utils              \
-    && mkdir /data
-
-RUN chown 1000:1000 /data
+    && mkdir /data          \
+    && chown 1000:1000 /data
 
 COPY entrypoint.sh /entrypoint.sh
+
+EXPOSE 18120
 
 ENTRYPOINT ["/entrypoint.sh"]
