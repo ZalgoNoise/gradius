@@ -1,6 +1,10 @@
 # gRadius
 A light-weight Docker container for a FreeRadius deployment configured with Google Workspace Secure LDAP
 
+![CI](https://github.com/ZalgoNoise/gradius/workflows/CI/badge.svg)
+
+______
+
 _To Do: A better `README.md`_
 
 ### Container Runtime
